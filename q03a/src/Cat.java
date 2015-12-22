@@ -6,7 +6,12 @@ import java.io.*;
 public class Cat {
 
     public static void main(String[] args) {
-        File file = new File(args[0]);
+        Cat cat = new Cat();
+        cat.launch(args[0]);
+    }
+
+    public void launch (String filename) {
+        File file = new File(filename);
         BufferedReader in = null;
         try {
             in = new BufferedReader(new FileReader(file));
@@ -23,7 +28,7 @@ public class Cat {
         }
     }
 
-    private static void closeReader(Reader reader) {
+    private void closeReader(Reader reader) {
         try {
             if (reader != null) {
                 reader.close();
