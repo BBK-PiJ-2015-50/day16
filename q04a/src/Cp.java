@@ -38,12 +38,14 @@ public class Cp {
                     }
                     System.out.println(source + " copied to " + destination);
                 } catch (FileNotFoundException ex) {
-                    System.out.println("File does not exist...an exception will be thrown");
+                    System.out.println(source + " does not exist!");
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 } finally {
                     closeReader(in);
-                    out.close();
+                    if (out != null) {
+                        out.close();
+                    }
                 }
             }
         } else {
@@ -60,4 +62,14 @@ public class Cp {
             ex.printStackTrace();
         }
     }
+
+    /*private void closeWriter(PrintWriter writer) {
+        try {
+            if (writer != null) {
+                writer.close();
+            }
+        } catch (NullPointerException ex) {
+            ex.printStackTrace();;
+        }
+    }*/
 }
