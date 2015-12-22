@@ -24,9 +24,7 @@ public class Cp {
 
         if (destinationFile.exists()) {
             System.out.print("Overwrite " + destination + " - Y/N?: ");
-            Scanner input = new Scanner(System.in);
-            String s = input.nextLine().toUpperCase();
-            if (!s.equals("Y")) {
+            if (! new Scanner(System.in).nextLine().toUpperCase().equals("Y")) {
                 System.out.println(("OK - file won't be copied"));
             } else {
                 BufferedReader in = null;
