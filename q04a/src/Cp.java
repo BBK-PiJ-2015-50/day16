@@ -38,7 +38,7 @@ public class Cp {
                     }
                     System.out.println(source + " copied to " + destination);
                 } catch (FileNotFoundException ex) {
-                    System.out.println("File does not exist");
+                    System.out.println("File does not exist...an exception will be thrown");
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 } finally {
