@@ -23,9 +23,9 @@ public class CsvAverage {
                 int numberOfNumbersOnLine = 0;
                 int sumOfNumbersOnLine = 0;
                 System.out.println(line);
-                for (String temp: line.split(", ")) {
+                for (String number: line.split(", ")) {
                     numberOfNumbersOnLine++;
-                    sumOfNumbersOnLine += Integer.parseInt(temp);
+                    sumOfNumbersOnLine += Integer.parseInt(number);
                 }
                 numberOfLines++;
                 lineAverage = sumOfNumbersOnLine / numberOfNumbersOnLine;
