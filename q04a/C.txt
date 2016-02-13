@@ -1,0 +1,8 @@
+Flushing
+When you read from a file,
+your program will not continue until the read operation finishes.
+This is not exactly the case with writing operations.
+When you execute one of the write() suite of methods,
+this only puts the information in some structure of the operating system.
+This may or may not be put immediately on disk,
+depending in different factors.
