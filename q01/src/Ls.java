@@ -9,16 +9,18 @@ public class Ls {
     }
 
     public void launch() {
-        // Using Simon's suggestion to locate user directory
-        // File dir = new File(System.getProperty("user.dir"));
-        // Keith's line
-        File dir = new File(".");
+        File currentDir = new File(".");
+        // Locate home directory using System Properties
+        File homeDir = new File(System.getProperty("user.home"));
         // Print using handy Arrays.toString() method
-        System.out.println(Arrays.toString(dir.list()));
+        System.out.println("CURRENT DIRECTORY");
+        System.out.println(Arrays.toString(currentDir.list()));
         System.out.println();
         // Print using enhanced for loop
-        for(String path:dir.list()) {
+        for(String path:currentDir.list()) {
             System.out.println(path);
         }
+        System.out.println("HOME DIRECTORY");
+        System.out.println(Arrays.toString(homeDir.list()));
     }
 }
