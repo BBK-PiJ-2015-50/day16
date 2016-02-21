@@ -38,13 +38,13 @@ public class Cp {
                     }
                     System.out.println(source + " copied to " + destination);
                 } catch (FileNotFoundException ex) {
-                    System.out.println(source + " does not exist!");
+                    System.out.println("Source file >>" + source + "<< does not exist!");
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
             }
         } else {
-            System.out.println("Destination file doesn't exist!");
+            System.out.println("Destination file >> " + destination + "<< doesn't exist!");
         }
     }
 }
