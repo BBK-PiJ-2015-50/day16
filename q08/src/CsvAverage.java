@@ -1,7 +1,11 @@
 /**
  * Created by chris on 12/23/15.
  */
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class CsvAverage {
 
@@ -12,9 +16,7 @@ public class CsvAverage {
 
     public void launch (String filename) {
         File file = new File(filename);
-        BufferedReader in = null;
-        try {
-            in = new BufferedReader(new FileReader(file));
+        try (BufferedReader in = new BufferedReader(new FileReader(file))) {
             int numberOfLines = 0;
             int lineAverage;
             int sumOfLineAverages = 0;
@@ -37,18 +39,6 @@ public class CsvAverage {
             System.out.println("File " + file + " does not exist.");
         } catch (IOException ex) {
             ex.printStackTrace();
-        } finally {
-            closeReader(in);
-        }
-    }
-
-    private void closeReader(Reader reader) {
-        try {
-            if (reader != null) {
-                reader.close();
-            }
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+        } 
     }
 }
